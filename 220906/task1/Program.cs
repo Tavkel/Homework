@@ -16,7 +16,7 @@ namespace HomeworkSep06
 
         static void Main(string[] args)
         {
-            string input;
+            string? input;
             do
             {
                 input = Console.ReadLine();
