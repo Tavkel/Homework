@@ -20,4 +20,20 @@ for (int i = power; i > 0; i--)
 {
     result = result * number;
 }
+
+
+
 System.Console.WriteLine(result);
+
+
+
+static int Power(int number, int power)
+{
+    if (power == 0)
+    {
+        return 1;
+    }
+    return number * Power(number, power - 1);
+}
+
+System.Console.WriteLine(Power(number, power));
