@@ -14,7 +14,7 @@ namespace HomeworkSep02
 
         static void Main(string[] args)
         {
-            int number = _userInputs.TryParseIntUserInput();
+            int number = UserInputs.TryParseIntUserInput();
             if (number > 0 && number < 8)
             {
                 if (number < 6) System.Console.WriteLine("нет");

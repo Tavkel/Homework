@@ -10,11 +10,9 @@ namespace HomeworkSep06
 {
     class Program
     {
-        private static UserInputs _userInputs = new UserInputs();
-
         static void Main(string[] args)
         {
-            int number = _userInputs.TryParseIntUserInput();
+            int number = UserInputs.TryParseIntUserInput();
             for (int i = 1; i <= number; i++)
             {
                 System.Console.WriteLine(Math.Pow(i, 3));

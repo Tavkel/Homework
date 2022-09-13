@@ -13,11 +13,9 @@ namespace HomeworkSep02
 {
     class Program
     {
-        private static UserInputs _userInputs = new UserInputs();
-
         static void Main(string[] args)
         {
-            int number = _userInputs.TryParseIntUserInput();
+            int number = UserInputs.TryParseIntUserInput();
             if (Math.Abs(number / 100) < 1)
             {
                 System.Console.WriteLine("Третьей цифры нет");

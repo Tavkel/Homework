@@ -8,7 +8,7 @@ namespace Shared.UserInputs
         ///<returns>
         ///Integer.
         ///</returns>
-        public int TryParseIntUserInput()
+        static public int TryParseIntUserInput()
         {
             Console.Write("Введите число: ");
             int result;
@@ -31,7 +31,7 @@ namespace Shared.UserInputs
         ///<returns>
         ///Array of integers.
         ///</returns>
-        public int[] TryParseIntArrayUserInput(int limit = 0)
+        static public int[] TryParseIntArrayUserInput(int limit = 0)
         {
             char[] separators = { ' ', ',', '|' };
             StringSplitOptions options = StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries;

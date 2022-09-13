@@ -4,16 +4,12 @@
 // 12821 -> да
 // 23432 -> да
 
-//using Shared.UserInputs;
-
 using System.Text.RegularExpressions;
 
 namespace HomeworkSep06
 {
     class Program
     {
-        //private static UserInputs _userInputs = new UserInputs();
-
         static void Main(string[] args)
         {
             string? input;

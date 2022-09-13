@@ -9,8 +9,6 @@ namespace HomeworkSep06
 {
     class Program
     {
-        private static UserInputs _userInputs = new UserInputs();
-
         static void Main(string[] args)
         {
             System.Console.WriteLine("Введите координаты первой точки: ");
@@ -26,7 +24,7 @@ namespace HomeworkSep06
         static Point CreateNewPoint()
         {
             Point point;
-            var tmp = _userInputs.TryParseIntArrayUserInput();
+            var tmp = UserInputs.TryParseIntArrayUserInput();
             if (tmp.Length != 3)
             {
                 System.Console.WriteLine("Ошибка ввода. Необходимо указать 3 координаты\nВведите координаты точки: ");

@@ -9,11 +9,9 @@ namespace HomeworkAug30
 {
     class Program
     {
-        private static UserInputs _userInputs = new UserInputs();
-
         static void Main(string[] args)
         {
-           int number = _userInputs.TryParseIntUserInput();
+           int number = UserInputs.TryParseIntUserInput();
            if (number % 2 == 0)
            {
                 Console.WriteLine($"Число {number} - четное.");

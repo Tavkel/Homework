@@ -7,10 +7,9 @@ using Shared.UserInputs;
 
 internal class Program
 {
-    private static UserInputs _userInputs = new UserInputs();
     private static void Main(string[] args)
     {
-        int input = _userInputs.TryParseIntUserInput();
+        int input = UserInputs.TryParseIntUserInput();
         int result = input % 10;
         for (int i = 10; input / i > 0; i *= 10)
         {

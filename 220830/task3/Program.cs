@@ -8,14 +8,12 @@ namespace HomeworkAug30
 {
     class Program
     {
-        private static UserInputs _userInputs = new UserInputs();
-
         static void Main(string[] args)
         {
             int number;
             do
             {
-                number = _userInputs.TryParseIntUserInput();
+                number = UserInputs.TryParseIntUserInput();
                 if (number < 2) System.Console.WriteLine("Out of range");
             }
             while(number < 2);

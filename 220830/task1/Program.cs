@@ -15,8 +15,6 @@ namespace HomeworkAug30
 {
     class Program
     {
-        private static UserInputs _userInputs = new UserInputs();
-
         static void Main(string[] args)
         {
 
@@ -26,10 +24,10 @@ namespace HomeworkAug30
             if (args.Length != 0 && args[0] == "sep")
             {
                 System.Console.Write("Enter a number: ");
-                int num1 = _userInputs.TryParseIntUserInput();
+                int num1 = UserInputs.TryParseIntUserInput();
 
                 System.Console.Write("Enter another number: ");
-                int num2 = _userInputs.TryParseIntUserInput();
+                int num2 = UserInputs.TryParseIntUserInput();
                 result = CompareTwo(num1, num2);
             }
             #endregion
@@ -38,7 +36,7 @@ namespace HomeworkAug30
             if (args.Length == 0 || args[0] == "single")
             {
                 System.Console.Write("Enter numbers to compare: ");
-                int[] numbersToCompare = _userInputs.TryParseIntArrayUserInput(); //Pass an integer to limit the amount of numbers to parse and return
+                int[] numbersToCompare = UserInputs.TryParseIntArrayUserInput(); //Pass an integer to limit the amount of numbers to parse and return
                 result = GetMaxFromArray(numbersToCompare);
             }
             #endregion
