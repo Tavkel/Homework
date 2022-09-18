@@ -4,7 +4,7 @@
 
 int count = 0;
 int num;
-string input;
+string? input;
 
 do
 {
