@@ -11,6 +11,7 @@ namespace HomeworkSep16
     {
         private static void Main(string[] args)
         {
+            System.Console.WriteLine("Формат ввода:\nРазделители: ',', '|', ' ' (пробел)\nДля дробных чисел в качестве разделителя целой и дробной частей используется '.'");
             System.Console.WriteLine("Введите коэффициент и офсет первой прямой: ");
             var line1 = CreateNewLine();
             System.Console.WriteLine("Введите коэффициент и офсет второй прямой: ");
