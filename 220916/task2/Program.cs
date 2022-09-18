@@ -3,7 +3,6 @@
 // b1 = 2, k1 = 5, b2 = 4, k2 = 9 -> (-0,5; -0,5)
 using Shared.UserInputs;
 using Shared.Cycles;
-using System.Globalization;
 
 namespace HomeworkSep16
 {
@@ -16,22 +15,23 @@ namespace HomeworkSep16
             var line1 = CreateNewLine();
             System.Console.WriteLine("Введите коэффициент и офсет второй прямой: ");
             var line2 = CreateNewLine();
-            if(line1.IsParallel(line2) == null)
+
+            bool? result = line1.IsParallel(line2);
+            if(result == null)
             {
                 System.Console.WriteLine("Одинаковые прямые");
                 return;
             }
-            if(line1.IsParallel(line2) == true)
+            if(result == true)
             {
                 System.Console.WriteLine("Прямые параллельны");
                 return;
             }
-            if(line1.IsParallel(line2) == false)
+            if(result == false)
             {
                 var intersection = line1.Intersection(line2);
                 Cycles.PrintArray<double>(intersection);
             }
-
         }
 
 
