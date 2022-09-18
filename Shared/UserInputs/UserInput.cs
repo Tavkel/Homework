@@ -1,3 +1,5 @@
+using System.Globalization;
+
 namespace Shared.UserInputs
 {
     public class UserInputs
@@ -74,5 +76,52 @@ namespace Shared.UserInputs
             while (!check);
             return result.ToArray();
         }
+
+        static public T[] TryParseArrayUserInput<T>(int limit = 0)
+        {
+            char[] separators = { ' ', ',', '|' };
+            StringSplitOptions options = StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries;
+
+            string? input;
+            bool check = false;
+            List<T> result = new List<T>();
+            do
+            {
+                input = Console.ReadLine();
+                if (input == null || input.Length == 0)
+                {
+                    System.Console.Write("Invalid input detected. Try again:");
+                    continue;
+                }
+
+                var inputSplit = input.Split(separators, options);
+                
+                if(limit !=0)
+                {
+                    inputSplit = inputSplit.Take(limit).ToArray();
+                }
+
+                foreach (var n in inputSplit)
+                {
+                    
+                    var number = (T)Convert.ChangeType(n, typeof(T), CultureInfo.InvariantCulture);
+                    if (number != null)
+                    {
+                        result.Add(number);
+                        check = true;
+                    }
+                    else
+                    {
+                        System.Console.Write("Invalid input detected. Try again:");
+                        result.Clear();
+                        check = false;
+                        break;
+                    }
+                }
+            }
+            while (!check);
+            return result.ToArray();
+        }
+
     }
 }
