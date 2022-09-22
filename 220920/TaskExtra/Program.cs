@@ -1,8 +1,8 @@
 ﻿// Трехмерный массив неповторяющихся чисел
 
-int rows = 5;
-int columns = 5;
-int depth = 5;
+int rows = 2;
+int columns = 2;
+int depth = 2;
 
 int[,,] array3 = new int[rows, columns, depth];
 int size = rows * columns * depth;
@@ -49,7 +49,7 @@ bool CheckIfExists(int number, int[] array)
 // Вариант 2
 
 System.Console.WriteLine("_______________________");
-int[] sourceArray = new int[size +1];
+int[] sourceArray = new int[size];
 
 for (int i = 0; i < sourceArray.Length; i++)
 {
@@ -89,7 +89,7 @@ static int GetNumber(int[] arr, int index)
                 return tmp;
             }
         }
-        for (int i = index; i > 0; i--)
+        for (int i = index; i >= 0; i--)
         {
             if (arr[i] != -1)
             {
