@@ -90,7 +90,8 @@ namespace Shared.UserInputs
                 input = Console.ReadLine();
                 if (input == null || input.Length == 0)
                 {
-                    System.Console.Write("Invalid input detected. Try again:");
+                    System.Console.WriteLine("Empty string / null input check triggered");
+                    System.Console.WriteLine("Invalid input detected. Try again:");
                     continue;
                 }
 
@@ -103,16 +104,17 @@ namespace Shared.UserInputs
 
                 foreach (var n in inputSplit)
                 {
-                    
-                    var number = (T)Convert.ChangeType(n, typeof(T), CultureInfo.InvariantCulture);
-                    if (number != null)
+                    T number;
+                    try
                     {
+                        number = (T)Convert.ChangeType(n, typeof(T), CultureInfo.InvariantCulture);
                         result.Add(number);
                         check = true;
                     }
-                    else
+                    catch (FormatException ex)
                     {
-                        System.Console.Write("Invalid input detected. Try again:");
+                        System.Console.WriteLine("Try-catch triggered: " + ex.Message);
+                        System.Console.WriteLine("Invalid input detected. Try again:");
                         result.Clear();
                         check = false;
                         break;
