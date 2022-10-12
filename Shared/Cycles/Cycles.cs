@@ -49,7 +49,7 @@ namespace Shared.Cycles
             for (int i = 0; i < rows; i++)
             {
                 tmp = CreateAndFillArray<T>(columns, floor, ceiling, digits);
-                Buffer.BlockCopy(tmp, 0, array, i*count, count);
+                Buffer.BlockCopy(tmp, 0, array, i * count, count);
             }
             return array;
         }
@@ -57,12 +57,16 @@ namespace Shared.Cycles
 
         static public void PrintArray<T>(IList<T> array)
         {
-            System.Console.Write($"[{array[0]}");
-            for (int i = 1; i < array.Count; i++)
+            if (array.Count == 0) System.Console.WriteLine("[]");
+            else
             {
-                System.Console.Write($", {array[i]}");
+                System.Console.Write($"[{array[0]}");
+                for (int i = 1; i < array.Count; i++)
+                {
+                    System.Console.Write($", {array[i]}");
+                }
+                System.Console.WriteLine("]");
             }
-            System.Console.WriteLine("]");
         }
         static public void Print2DArray<T>(T[,] array)
         {
