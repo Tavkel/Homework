@@ -72,7 +72,7 @@ string[] GetElementsByIndexes(string[] array, int[] indexes)
 #endregion
 
 #region linq
-var result3 = input.Where(_ => _.Length < 4).ToArray();
+var result3 = input.Where(_ => _.Length <= limit).ToArray();
 Cycles.PrintArray(result3);
 #endregion
 
